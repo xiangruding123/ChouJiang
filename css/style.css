@@ -1,0 +1,361 @@
+html,body{
+	font-family: "微软雅黑", "microsoft yahei";
+}
+.l{
+	float: left;
+}
+.r{
+	float: right;
+}
+.borderpadd{
+	box-sizing: border-box;
+	padding: 0 5%;
+}
+/*===header=====*/
+#header{
+	width: 100%;
+	height: 0.88rem;
+	background: #FFF;	
+}
+#header span{
+	display: inline-block;
+	width:auto;
+	height: 100%;
+	line-height: 0.88rem;
+	font-size:0.32rem;
+}
+#header span:first-child{
+	margin: 0 1%;
+	width:0.65rem;
+	height: 100%;
+	background: #fff url(../img/lottery/left.png) no-repeat center;
+	background-size: 30% 32%;	
+}
+#header span:last-child{
+	width:0.98rem;
+	height: 100%;
+}
+
+/*=====section=======*/
+#section{
+	width: 100%;
+	height: auto;
+	background: #fee40b url(../img/lottery/title.png) no-repeat top center;
+	background-size: 100% auto;
+}
+
+/*====转盘位置===*/
+.g-content {
+	padding-top: 3.00rem;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	font-family: "微软雅黑", "microsoft yahei";
+}
+.g-content .g-lottery-case {
+	box-sizing: border-box;
+	width: 100%;
+	/*height: 6.00rem;*/
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.g-content .g-lottery-case .g-left h2 {
+	font-size: .32rem;
+	height: 0.5rem;
+	line-height: .5rem;
+	text-align: center;
+	font-weight: normal;
+}
+
+.g-content .g-lottery-case .g-left {
+	width: 100%;
+	height: auto;
+}
+
+.g-lottery-box {
+	margin: 5%;
+	width: 90%;
+	height: 6.5rem;
+	position: relative;
+	background: url(../img/lottery/bg_plate.gif) no-repeat center;
+	background-size: 100% 100%;
+}
+@media only screen and (min-width: 700px) {
+	.g-lottery-box {
+		margin: 5%;
+		width: 90%;
+		height: 9.5rem;
+		position: relative;
+		background: url(../img/lottery/bg_plate.gif) no-repeat center;
+		background-size: 100% 100%;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.g-lottery-box {
+		margin: 5%;
+		width: 90%;
+		height: 15.0rem;
+		position: relative;
+		background: url(../img/lottery/bg_plate.gif) no-repeat center;
+		background-size: 100% 100%;
+	}
+}
+
+.g-lottery-box .g-lottery-img {
+	width: 100%;
+	height: 100%;
+	background: url(../img/lottery/prize.png) no-repeat center;
+	background-size: 85% 85%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.g-lottery-box .playbtn {
+	display: block;
+	width: 2.0rem;
+	height: 2.0rem;
+	/*width: 186px;
+	height: 186px;*/
+	background: url(../img/lottery/btn_play.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+/*=======btn_chose========*/
+.btn_chose{
+	width: 100%;
+	height: 1.80rem;
+	display: flex;
+	margin: 8% 0;
+}
+.btn_chose li{
+	flex: 1;
+	width: 100%;
+	height: 100%;
+}
+.btn_chose li img{
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+.btn_chose li img span{
+	vertical-align: middle;
+	display: inline-block;
+	width: 0px;
+	height: 100%;
+}
+/*=============*/
+
+.conrules{
+	width: 100%;
+	height: auto;
+}
+.conrules h3{
+	width: 100%;
+	height: 0.96rem;
+	line-height: 0.96rem;
+	font-size: 0.40rem;
+	font-weight: bold;
+	color: #5c0106;
+	text-align: left;
+}
+.conrules .conrulesdesc{
+	width: 100%;
+	height: auto;
+	line-height: 0.5rem;
+	font-size: 0.32rem;
+	color: #5c0106;
+	text-align: left;
+}
+.conrules .conruleslist{
+	margin: 10% 0 5%;
+	width: 100%;
+	/*height: 450px;*/
+	/*height: 6.50rem;*/
+	height: 6.0rem;
+	line-height: 0.4rem;
+	font-size: 0.32rem;
+	color: #5c0106;
+	text-align: left;
+	background: url(../img/lottery/btn_list.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.conrules .conruleslist h4{
+	font-size: 0.35rem;
+	font-weight: normal;
+	width: 100%;
+	height: 1.4rem;
+	line-height: 0.7rem;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0.5rem 0 0.2rem;
+}
+
+.conrules .conruleslist p{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 0.30rem;
+	width: 93%;
+	height: 0.8rem;
+	line-height: 0.9rem;
+	box-sizing: border-box;
+	padding-left: 0.6rem;
+}
+
+.conrules .conrulesmore{
+	display: inline-block;
+	width: 100%;
+	height: 1.40rem;
+	line-height: 1.40rem;
+	font-size: 0.40rem;
+	color: #5c0106;
+	text-align: center;
+}
+
+/*====弹窗-提示框======*/
+.tips {
+    text-align: center;
+    font-size: 0.32rem;
+    border-radius: 0.2rem;
+    color: #000;
+    background: #fff;
+    overflow: hidden;
+    z-index: 200!important;
+    /*居中*/
+    width:6.00rem;
+	height:6.0rem;
+	position:fixed;
+	left:50%;
+	margin-left:-3.00rem; 
+	top:50%;
+	margin-top:-3.00rem;   
+}
+
+.tips .tipstop{
+   width: 100%;
+   height: 4.15rem;
+   background: #fee40b url(../img/lottery/bg_prize.png) no-repeat center;
+   background-size: 100% 100%;
+   position: relative;
+}
+
+.tips .tipstop .btn_close{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 0.60rem;
+   height: 0.60rem;
+}
+
+
+.tips .tipstop .prize{
+   	width: 100%;
+   	height: 80%;
+   	display:flex;
+	justify-content:center;
+}
+
+.tips .tipstop .prize img{
+	align-self:center;
+	display: block;
+    width: 3.28rem;
+    height: 1.85rem;
+}
+
+.tips .tipstop .btn_desc{
+   width: 100%;
+   height: 20%;
+   color: #5c0106;
+   font-size: 0.32rem;
+   line-height: 0.5rem;
+}
+
+.tips .tipsdown{
+   	width: 100%;
+   	height: 1.85rem;
+   	display:flex;
+	justify-content:center;
+}
+.tips .tipsdown p{
+	align-self:center;
+    width: 70%;
+   	height: 0.8rem;
+   	line-height: 0.80rem;
+   	background: #f13627;
+   	text-align: center;
+   	font-size: 0.35rem;
+   	font-weight: normal;
+   	color: #fff;
+   	border: 1px solid #000;
+   	border-radius: 0.2rem;
+}
+
+.btn_share {box-sizing: border-box;padding: 0 2%;background: #fff;width: 100%;height: 3.0rem;text-align: left;position: fixed;bottom: 0;left: 0;z-index: 999;}
+.btn_share p{font-size: 0.30rem;width: 100%;height: 0.98rem;line-height: 0.98rem;}
+.btn_share ul{width: 100%;height: 2.02rem;line-height: 2.02rem;display: flex;}
+.btn_share ul li{flex: 1;width: auto;height: 2.02rem;line-height: 2.02rem;text-align: center;}
+.btn_share ul li img{width: 1.08rem;height: 1.08rem;}
+/*========================*/
+.morerulestips{
+	text-align: center;
+    font-size: 0.32rem;
+    border-radius: 0.2rem;
+    color: #000;
+    background: #fff;
+    overflow: hidden;
+    z-index: 200!important;
+    /*居中*/
+    width:6.00rem;
+	height:6.0rem;
+	position:fixed;
+	left:50%;
+	margin-left:-3.00rem; 
+	top:50%;
+	margin-top:-3.00rem; 
+}
+.morecontent{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.morecontent img{
+	position: absolute;
+   	top: 0;
+   	right: 0;
+   	width: 0.60rem;
+   	height: 0.60rem;
+}
+.morecontent h3{
+	font-size: 0.40rem;
+	font-weight: normal;
+	color: #5c0106;
+	width: 100%;
+	height: 2.0rem;
+	text-align: center;
+	line-height: 2.0rem;
+}
+.morecontent p{
+	font-size: 0.32rem;
+	color: #5c0106;
+	width: 100%;
+	text-align: left;
+	line-height: 0.5rem;
+}
+
+/*================*/
+/*一定要记得添加样式（必须）*/
+.loading-shade {
+    position: fixed;   
+    background: rgba(0,0,0,.5);   
+    z-index: 102;            
+}
+.loading-shade{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+/*=================*/

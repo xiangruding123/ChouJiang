@@ -1,0 +1,153 @@
+html,body{
+	font-family: "微软雅黑", "microsoft yahei";
+}
+.g-content {
+	margin: 100px auto;
+	width: 100%;
+	background: #fbe3cc;
+	height: auto;
+	font-family: "微软雅黑", "microsoft yahei";
+}
+.g-content .g-lottery-case {
+	box-sizing: border-box;
+	width: 100%;
+	/*height: 6.00rem;*/
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.g-content .g-lottery-case .g-left h2 {
+	font-size: .32rem;
+	height: 0.5rem;
+	line-height: .5rem;
+	text-align: center;
+	font-weight: normal;
+}
+
+.g-content .g-lottery-case .g-left {
+	width: 100%;
+	height: auto;
+}
+
+.g-lottery-box {
+	margin: 5%;
+	width: 6.5rem;
+	height: 6.5rem;
+	position: relative;
+	background: url(../img/lottery/ly-plate-c.gif) no-repeat center;
+	background-size: 100% 100%;
+	position: relative;
+}
+@media only screen and (min-width: 700px) {
+	.g-lottery-box {
+		margin: 5%;
+		/*width: 90%;*/
+		width: 9.5rem;
+		height: 9.5rem;
+		position: relative;
+		background: url(../img/lottery/ly-plate-c.gif) no-repeat center;
+		background-size: 100% 100%;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.g-lottery-box {
+		margin: 5%;
+		width: 15.0rem;
+		/*width: 90%;*/
+		height: 15.0rem;
+		position: relative;
+		background: url(../img/lottery/ly-plate-c.gif) no-repeat center;
+		background-size: 100% 100%;
+	}
+}
+
+.g-lottery-box .g-lottery-img {
+	width: 100%;
+	height: 100%;
+	background: url(../img/lottery/bg-lottery.png) no-repeat center;
+	background-size: 85% 85%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.g-lottery-box .playbtn {
+	float: left;
+	display: block;
+	width: 2.1rem;
+	height: 2.1rem;
+	/*width: 186px;
+	height: 186px;*/
+	background: url(../img/lottery/playbtn.png) no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 34%;
+	top: 34%;
+}
+@media only screen and (min-width: 700px) {
+	.g-lottery-box .playbtn {
+		float: left;
+		display: block;
+		width: 2.1rem;
+		height: 2.1rem;
+		/*width: 186px;
+		height: 186px;*/
+		background: url(../img/lottery/playbtn.png) no-repeat center;
+		background-size: 100% 100%;
+		position: absolute;
+		left: 39%;
+		top: 39%;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.g-lottery-box .playbtn {
+		float: left;
+		display: block;
+		width: 2.1rem;
+		height: 2.1rem;
+		/*width: 186px;
+		height: 186px;*/
+		background: url(../img/lottery/playbtn.png) no-repeat center;
+		background-size: 100% 100%;
+		position: absolute;
+		left: 45%;
+		top: 45%;
+	}
+}
+
+/*==========*/
+.tips {
+    text-align: center;
+    z-index: 104;    
+    font-size: 0.32rem;
+    border-radius: 0.2rem;
+    color: #000;
+    background: #eee;
+    overflow: hidden;
+    /*居中*/
+    width:6.00rem;
+	height:1.0rem;
+	line-height: 1.0rem;
+	position:fixed;
+	left:50%;
+	margin-left:-3.00rem; 
+	top:50%;
+	margin-top:-0.50rem;   
+}
+
+/*一定要记得添加样式（必须）*/
+.loading-shade {
+    position: fixed;    /*窗口定位*/
+    background: rgba(0,0,0,.5);    /*遮罩层的颜色*/
+    z-index: 102;            /*层级关系为102*/
+}
+.loading-shade{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}

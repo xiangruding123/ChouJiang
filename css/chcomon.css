@@ -1,0 +1,224 @@
+/*初始化*/
+body,div,section,header,footer,span,h1,h2,h3,h4,ul,li,form,p,img,dl,dd,dt,a {border: 0 none;margin: 0;padding: 0;}
+ul,li {list-style: none;}
+.l{float: left!important;}
+.r{float: right!important;}
+
+.clear{
+	clear: both;
+}
+.borderpadd{
+	box-sizing: border-box;
+	padding: 0 5%;
+}
+
+#header{
+	width: 100%;
+	height: 0.88rem;
+	background: #202a34;	
+}
+#header span{
+	display: inline-block;
+	width:auto;
+	height: 100%;
+	line-height: 0.88rem;
+	font-size: 0.32rem;
+	color: #fff;
+}
+#header span:first-child{
+	margin: 0 1%;
+	width:0.65rem;
+	height: 100%;
+	background: url(../img/chimg/tab_food_back.png) no-repeat center;
+	background-size: 60% 32%;	
+}
+#header span:last-child{
+	width:0.98rem;
+	height: 100%;
+}
+/*==========*/
+#section{
+	width: 100%;
+	height: auto;
+}
+#section .sectionimg{
+	width: 100%;
+	height: 9.30rem;
+	position: relative;
+	display:flex;
+	justify-content:center;
+}
+#section .sectionimg p{
+	width: 1.78rem;
+	height: 1.78rem;
+	align-self:center;	
+}
+#section .sectionimg p img{
+	width: 100%;
+	height: 100%;
+}
+
+#section .sectionimg span{
+	display: inline-block;
+	width: 1.70rem;
+	height: 0.60rem;
+	position: absolute;
+	color: #000;
+	bottom: .66rem;
+}
+#section .sectionimg span img{
+	width: 100%;
+	height: 100%;
+}
+#section .sectionimg .sec-invite{
+	left: .80rem;
+}
+#section .sectionimg .sec-share{
+	right: 0.80rem;
+}
+
+@media only screen and (min-width: 710px) {
+	#section .sectionimg .sec-invite{
+		width: 2.1rem;
+		bottom: .66rem;
+		left: 1.2rem;
+	}
+	#section .sectionimg .sec-share{
+		width: 2.1rem;
+		bottom: .66rem;
+		right: 1.2rem;
+	}
+}
+/*=======*/
+#section .sectiondesc{
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	padding: 8% 3%;
+}
+#section .sectiondesc h3{
+	width: 100%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	font-size: 0.40rem;
+	color: #333;
+	font-weight: bold;
+}
+#section .sectiondesc p{
+	width: 100%;
+	height: auto;
+	line-height: 0.4rem;
+	font-size: 0.30rem;
+	color: #333;
+}
+
+#section .sectiondesc ul{
+	width: 100%;
+	height: auto;
+	margin-top: 2%;
+}
+#section .sectiondesc ul li{
+	float: left;
+	width: 27.33%;
+	margin: 0 3%;
+	height: 3.2rem;
+}
+
+#section .sectiondesc ul li dl{
+	display: inline-block;
+}
+#section .sectiondesc ul li dl dt{
+	width: 100%;
+	margin: 0 1%;
+	height: 80%;
+	display: inline-block;
+}
+#section .sectiondesc ul li dl dt img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+#section .sectiondesc ul li dl dt span{
+	vertical-align: middle;
+	display: inline-block;
+	width: 0px;
+	height: 100%;
+}
+#section .sectiondesc ul li dl dd{
+	width: 100%;
+	height: 20%;
+	font-size: 0.30rem;
+	text-align: center;
+	line-height: 0.5rem;
+}
+/*===========*/
+.btn_share {box-sizing: border-box;padding: 0 2%;background: #fff;width: 100%;height: 3.0rem;text-align: left;position: fixed;bottom: 0;left: 0;z-index: 999;}
+.btn_share p{font-size: 0.30rem;width: 100%;height: 0.98rem;line-height: 0.98rem;}
+.btn_share ul{width: 100%;height: 2.02rem;line-height: 2.02rem;display: flex;}
+.btn_share ul li{flex: 1;width: auto;height: 2.02rem;line-height: 2.02rem;text-align: center;}
+.btn_share ul li img{width: 1.08rem;height: 1.08rem;}
+
+/*=================*/
+/*更多规则弹出层*/
+.morerulestips{
+	text-align: center;
+    font-size: 0.32rem;
+    border-radius: 0.2rem;
+    color: #000;
+    background: #fff;
+    overflow: hidden;
+    z-index: 200!important;
+    /*居中*/
+    width:6.00rem;
+	height:6.0rem;
+	position:fixed;
+	left:50%;
+	margin-left:-3.00rem; 
+	top:50%;
+	margin-top:-3.00rem; 
+}
+.morecontent{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.morecontent img{
+	position: absolute;
+   	top: 0;
+   	right: 0;
+   	width: 0.60rem;
+   	height: 0.60rem;
+}
+.morecontent h3{
+	font-size: 0.40rem;
+	font-weight: normal;
+	color: #5c0106;
+	width: 100%;
+	height: 1.6rem;
+	text-align: center;
+	line-height: 1.6rem;
+}
+.morecontent p{
+	font-size: 0.32rem;
+	color: #5c0106;
+	width: 100%;
+	text-align: left;
+	line-height: 0.5rem;
+}
+
+/*================*/
+/*一定要记得添加样式（必须）*/
+.loading-shade {
+    position: fixed;   
+    background: rgba(0,0,0,.5);   
+    z-index: 102;            
+}
+.loading-shade{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+/*=================*/
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>抽奖</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<!--==引入rem==-->
+		<script type="text/javascript">
+			!function(win){function resize(){var domWidth=domEle.getBoundingClientRect().width;if(domWidth/v>540){domWidth=540*v}win.rem=domWidth/7.5;domEle.style.fontSize=win.rem+"px"}var v,initial_scale,timeCode,dom=win.document,domEle=dom.documentElement,viewport=dom.querySelector('meta[name="viewport"]'),flexible=dom.querySelector('meta[name="flexible"]');if(viewport){var o=viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);if(o){initial_scale=parseFloat(o[2]);v=parseInt(1/initial_scale)}}else{if(flexible){var o=flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);if(o){v=parseFloat(o[2]);initial_scale=parseFloat((1/v).toFixed(2))}}}if(!v&&!initial_scale){var n=(win.navigator.appVersion.match(/android/gi),win.navigator.appVersion.match(/iphone/gi));v=win.devicePixelRatio;v=n?v>=3?3:v>=2?2:1:1,initial_scale=1/v}if(domEle.setAttribute("data-dpr",v),!viewport){if(viewport=dom.createElement("meta"),viewport.setAttribute("name","viewport"),viewport.setAttribute("content","initial-scale="+initial_scale+", maximum-scale="+initial_scale+", minimum-scale="+initial_scale+", user-scalable=no"),domEle.firstElementChild){domEle.firstElementChild.appendChild(viewport)}else{var m=dom.createElement("div");m.appendChild(viewport),dom.write(m.innerHTML)}}win.dpr=v;win.addEventListener("resize",function(){clearTimeout(timeCode),timeCode=setTimeout(resize,300)},false);win.addEventListener("pageshow",function(b){b.persisted&&(clearTimeout(timeCode),timeCode=setTimeout(resize,300))},false);resize()}(window);
+		</script>
+	</head>
+	<body>
+		<!--=========-->
+		
+		<div class="g-content">
+			<div class="g-lottery-case">
+				<div class="g-left">
+					<h2>您已拥有<span class="playnum"></span>次抽奖机会，点击立刻抽奖！~</h2>
+					<div class="g-lottery-box">
+						<div class="g-lottery-img"></div>
+						<a class="playbtn" href="javascript:;" title="开始抽奖"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <!--提示框-->
+        <div class="tips" style="display: none;">恭喜您获得100元京东E卡，请注意查收!</div>
+        
+		<!--=========-->
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+		<script>
+			$(function() {
+				//============================================
+				//添加页面遮罩
+		        function addShade() {
+		            var htmlHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+		            $("body").append('<div class="loading-shade"></div>');
+		            $(".loading-shade").css("100%");
+		        }
+		      	function removediv(){
+					setTimeout(function (){
+					    $('.loading-shade').remove();
+			            $('.tips').hide();
+					},2000);
+				}
+				//=================================================		        
+				var $btn = $('.g-lottery-img');
+				var $playbtn = $('.playbtn');
+				
+				var playnum = 300;   //初始次数，由后台传入
+				$('.playnum').html(playnum);
+				
+				var isture = 0;
+				
+				var clickfunc = function() {
+					//var data = [1, 2, 3, 4, 5, 6];
+					//data为随机出来的结果，根据概率后的结果
+					//data = data[Math.floor(Math.random() * data.length)];
+					
+					var data = rnd(1, 6);
+					console.log(data);
+					switch(data) {
+						case 1:
+						//var angle = [26, 88, 137, 185, 235, 287, 337];
+						//角度还是个问题？？的注意修改的时候要测试哦哦
+							rotateFunc(1, 0, '1理财金2000元');
+							break;
+						case 2:
+							rotateFunc(2, -60, '2谢谢参与');
+							break;
+						case 3:
+							rotateFunc(3, 240, '3理财金5200');
+							break;
+						case 4:
+							rotateFunc(4, 180, '4京东E卡');
+							break;
+						case 5:
+							rotateFunc(5, 120, '5谢谢参与');
+							break;
+						case 6:
+							rotateFunc(6, 420, '6理财金1000元');
+							break;
+					}
+				}
+				
+				$playbtn.click(function() {
+					if(isture) return; // 如果在执行就退出
+					isture = true; // 标志为 在执行
+					//先判断是否登录,未登录则执行下面的函数
+					if(1 == 2) {
+						$('.playnum').html('0');
+						
+						addShade();  //添加页面阴影
+						$('.tips').html("请先登录");
+						$('.tips').show();
+						removediv();  //延时移除阴影
+						
+						//alert("请先登录");
+						isture = false;
+					} else { //登录了就执行下面
+						
+						if(playnum <= 0) { //当抽奖次数为0的时候执行
+							$('.playnum').html(0);
+							addShade();  //添加页面阴影
+							$('.tips').html("您没有抽奖次数了哦！！");
+							$('.tips').show();
+							removediv();  //延时移除阴影
+							//alert("您没有抽奖次数了哦");
+							isture = false;
+						} else { //还有次数就执行
+							playnum = playnum - 1;  //执行转盘了则次数减1
+							if(playnum <= 0) {
+								playnum = 0;
+							}
+							$('.playnum').html(playnum);
+							clickfunc();
+						}
+					}
+				});
+				
+				var rotateFunc = function(awards, angles, text) {
+					isture = true;
+					$btn.stopRotate();
+					$btn.rotate({
+						angle: 0,
+						duration: 4000, //旋转时间
+						animateTo: angles + 1440, //让它根据得出来的结果加上1440度旋转(1440/360=4圈)
+						callback: function() {
+							isture = false; // 标志为 执行完毕
+							addShade();   //添加页面阴影
+							$('.tips').show();
+							$('.tips').html(text);
+							//显示结果
+							console.log(text);
+							
+							removediv();  //延时移除阴影
+							//alert(text);
+						}
+					});
+				};
+				
+				function rnd(n, m) {
+					return Math.floor(Math.random() * (m - n + 1) + n)
+				}
+				
+				
+			});
+		</script>
+	</body>
+</html>

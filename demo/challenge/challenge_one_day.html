@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>challenge_one_day</title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/chcomon.css" />
+		<!--==引入rem==-->
+		<script type="text/javascript">
+			!function(win){function resize(){var domWidth=domEle.getBoundingClientRect().width;if(domWidth/v>540){domWidth=540*v}win.rem=domWidth/7.5;domEle.style.fontSize=win.rem+"px"}var v,initial_scale,timeCode,dom=win.document,domEle=dom.documentElement,viewport=dom.querySelector('meta[name="viewport"]'),flexible=dom.querySelector('meta[name="flexible"]');if(viewport){var o=viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);if(o){initial_scale=parseFloat(o[2]);v=parseInt(1/initial_scale)}}else{if(flexible){var o=flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);if(o){v=parseFloat(o[2]);initial_scale=parseFloat((1/v).toFixed(2))}}}if(!v&&!initial_scale){var n=(win.navigator.appVersion.match(/android/gi),win.navigator.appVersion.match(/iphone/gi));v=win.devicePixelRatio;v=n?v>=3?3:v>=2?2:1:1,initial_scale=1/v}if(domEle.setAttribute("data-dpr",v),!viewport){if(viewport=dom.createElement("meta"),viewport.setAttribute("name","viewport"),viewport.setAttribute("content","initial-scale="+initial_scale+", maximum-scale="+initial_scale+", minimum-scale="+initial_scale+", user-scalable=no"),domEle.firstElementChild){domEle.firstElementChild.appendChild(viewport)}else{var m=dom.createElement("div");m.appendChild(viewport),dom.write(m.innerHTML)}}win.dpr=v;win.addEventListener("resize",function(){clearTimeout(timeCode),timeCode=setTimeout(resize,300)},false);win.addEventListener("pageshow",function(b){b.persisted&&(clearTimeout(timeCode),timeCode=setTimeout(resize,300))},false);resize()}(window);
+		</script>
+		<style type="text/css">
+			#section .sectionimg{
+				background: url(../../img/chimg/challenge_one_day.png) no-repeat center;
+				background-size: 100% 100%;
+			}
+			#section .sectiondesc .moredesc span{
+				display: inline-block;
+				width: 1.20rem; 
+				height: 0.40rem;
+				text-indent: -9999em;
+				color: #28bf79;
+				background: url(../../img/chimg/btn_more.png) no-repeat center;
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<span class="l" onclick="javascript:history.back();"></span>
+			<span class="l">积分抽奖</span>
+			<span class="r"></span>
+		</header>
+		<section id="section">
+			<div class="sectionimg">
+				<p id="btn_start"><img src="../../img/chimg/btn_start.png"/></p>
+				<span class="sec-invite"><img src="../../img/chimg/btn_challenge_friend.png"/></span>
+				<span class="sec-share"><img src="../../img/chimg/btn_challenge_share.png"/></span>
+			</div>
+			<!-------------->
+			<div class="sectiondesc">
+				<h3 style="margin: 0 0 2%;">【挑战规则】</h3>
+				<p class="moredesc">参与者每天累计完成3公里健走会跑步，每位用户每日只限参与一次，完成后可获得相应的积分奖励。<span class="conrulesmore">更多规则</span></p>
+			</div>
+		</section>
+		
+		<!----分享显示内容--->
+		<div class="btn_share" style="display: none;">
+            <p>分享到:</p>
+            <ul>
+            	<li id="_circle"><img src="../../img/lottery/icon_share_friend_circle.png"/></li>
+            	<li id="_blog"><img src="../../img/lottery/icon_share_micro_blog.png"/></li>
+            	<li id="_qq"><img src="../../img/lottery/icon_share_qq.png"/></li>
+            	<li id="_wechat"><img src="../../img/lottery/icon_share_wechat.png"/></li>
+            </ul>
+        </div>
+		<!----------更多规则-显示--------->
+        <div class="morerulestips" style="display: none;">
+        	<div class="morecontent">
+        		<img class="btn_close" src="../../img/chimg/btn_challenge_close.png"/>
+        		<h3>声明</h3>
+        		<p class="borderpadd">奖品图片仅供参考，具体以实物为准，在积分抽奖和追换过程中，如果出现违规行为（如作弊领取、恶意套现等，)将取消您获得积分的资格并有权撤销违规交易，收回活动中所得的积分，（含已使用的积分及未使用的积分），必要时将追究法律责任。</p>
+        	</div>
+        </div>
+	        
+	</body>
+	<script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+			function addShade() {
+		        var htmlHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+		        $("body").append('<div class="loading-shade"></div>');
+		        $(".loading-shade").css("100%");
+		    }
+			
+			sharezhe();
+			function sharezhe(){
+			    $('.sec-share').unbind("click").bind("click",function(){
+			         addShade();
+			         $('.btn_share').show();
+			         del();  
+			    });
+			}
+			function del(){
+				$(".loading-shade").unbind("click").bind("click",function(){
+			    	$('.loading-shade').remove();
+			     	$('.btn_share').hide();
+			    });
+			}
+			//更多规则弹出层
+		  	$('.conrulesmore').unbind("click").bind('click',function(){
+				addShade();
+				$('.morerulestips').show();
+				del2()
+			});
+			function del2(){
+				$('.btn_close').bind('click',function(){
+					$('.loading-shade').remove();
+					$('.morerulestips').hide();
+				});
+			}
+		});
+	</script>
+</html>
