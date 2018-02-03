@@ -10,6 +10,6 @@
 #### 以及部分其他的demo
 
 ### 随机点名及相应的选项 【点名册dianmingCe】
-### ![随机点名及相应的选项](img/dianmingche.png)
+### ![随机点名及相应的选项](dianMingCe/dianmingche.png)
 这是效果，根据需要修改其中的人员即可！！
 
